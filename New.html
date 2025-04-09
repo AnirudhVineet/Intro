@@ -1,0 +1,96 @@
+<iframe src="music.html" style="display: none;"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #222;
+            color: rgb(0, 0, 0);
+            background-image: url('background.webp'); 
+        }
+
+        /* Password Box */
+        #password-container {
+            margin-top: 100px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Initially Hide the Content */
+        #content {
+            display: none;
+            margin-top: 150px;
+            text-align: center;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Password Section -->
+    <div id="password-container">
+        <h2>Name of the song playing.</h2>
+        <h2>Solve Riddle to Access the Page</h2>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p class="error" id="error-message"></p>
+    </div>
+
+    <!-- Hidden Content -->
+    <div id="content">
+    <h2>Hi, I am Anirudh Vineet (as you might already know from the previous 2 pages) I 
+        am learning CSS and JavaScript. I also learn quite quickly, and enjoy occasionally
+        solving puzzles. I also enjoy Video Editing and Photoshop and playing a wide varity of games.  
+    </h2>
+    <h1>Thankyou</h1>
+    </div>
+
+    <script>
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+            let correctPassword = "Celestial"; 
+            let errorMessage = document.getElementById("error-message");
+
+            if (password === correctPassword) {
+                document.getElementById("password-container").style.display = "none";
+                document.getElementById("content").style.display = "block"; 
+            } else {
+                errorMessage.innerText = "Incorrect guess. Try again!";
+            }
+        }
+    </script>
+
+</body>
+</html>

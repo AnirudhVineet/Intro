@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <iframe src="music.html" style="display: none;"></iframe>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Flowchart</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background.webp'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+        }
+
+        .box {
+            position: absolute;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Images */
+        .box img {
+            width: 80%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out;
+            border: 3px solid black;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        /* Hover Text */
+        .hover-text {
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Hide Image & Show Text on Hover */
+        .box:hover img {
+            opacity: 0;
+        }
+        .box:hover .hover-text {
+            opacity: 1;
+        }
+
+        /* Start Button */
+        .start-button {
+            position: absolute;
+            top: 250px;
+            left: 350px;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .start-button:hover {
+            background-color: #45a049;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        /* Positioning */
+        .center { top: 150px; left: 570px; transform: translateX(-50%); } 
+        .top { top: -50px; left: 80px; }  
+        .bottom { top: 350px; left: 80px; }  
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box center">
+            <img src="Photo1.jpeg" alt="Start">
+            <div class="hover-text">This is my first website</div>
+        </div>
+
+        <button class="start-button" onclick="location.href='New.html'">Start</button>
+
+        <div class="box top">
+            <img src="Photo2.jpeg" alt="Top">
+            <div class="hover-text">My name is Anirudh Vineet.</div>
+        </div>
+        
+        <div class="box bottom">
+            <img src="Photo3.jpeg" alt="Bottom">
+            <div class="hover-text">Totally 0 help ChatGPT</div>
+        </div>
+    </div>
+
+</body>
+</html>
